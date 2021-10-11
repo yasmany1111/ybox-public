@@ -12,9 +12,9 @@ The doc autosaves in layers when being edited.
 This also was a workaround to KV Storage not reflecting changes immediately sometimes.
 
 ## Stack
-Cloudflare Pages
-Cloudflare Workers
-Cloudflare KV Storage
+* Cloudflare Pages
+* Cloudflare Workers
+* Cloudflare KV Storage
 
 # Instructions
 Run using
