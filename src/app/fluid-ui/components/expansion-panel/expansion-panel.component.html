@@ -1,0 +1,16 @@
+<div class="expansion-panel">
+  <div class="separator"></div>
+
+  <div class="title-container flex flex-row items-center justify-center-start" (click)="isExpanded = !isExpanded">
+    <span *ngIf="isExpanded; else expandBlock" class="toggle-icon flex flex-row items-center justify-center">-</span>
+    <ng-template #expandBlock>
+      <span class="toggle-icon flex flex-row items-center justify-center">+</span>
+    </ng-template>
+
+    <span class="title">{{ title }}</span>
+  </div>
+
+  <div class="content" *ngIf="isExpanded">
+    <ng-content></ng-content>
+  </div>
+</div>

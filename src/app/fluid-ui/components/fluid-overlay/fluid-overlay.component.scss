@@ -1,0 +1,29 @@
+.fluid-full-overlay {
+  align-items: inherit;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: inherit;
+  flex-flow: inherit;
+  height: 100vh;
+  justify-content: inherit;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+}
+
+:host[centered="true"] .fluid-full-overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+:host.primary-bg .fluid-full-overlay {
+  background-color: var(--color-background);
+}
+
+:host.absolute .fluid-full-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

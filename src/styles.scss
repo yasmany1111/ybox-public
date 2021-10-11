@@ -1,0 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '../node_modules/@sweetalert2/theme-dark/dark.min.css';
+@import './app/fluid-ui/styles/index';
+@import './scss/app-generic';
+@import './scss/milkdown-mods/index';
+
+// Swal
+
+html body.swal2-height-auto {
+  height: 100% !important;
+}

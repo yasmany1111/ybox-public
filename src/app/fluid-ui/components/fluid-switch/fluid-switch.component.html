@@ -1,0 +1,12 @@
+<div class="fluid-switch">
+  <span class="fluid-switch__label"><ng-content></ng-content></span>
+  <label class="switch">
+    <input
+      [checked]="currentValue"
+      (change)="emitNewValue($event)"
+      class="switch__input"
+      type="checkbox"
+    />
+    <div class="switch__placeholder"></div>
+  </label>
+</div>

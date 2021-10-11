@@ -1,0 +1,21 @@
+.fluid-divider {
+  border-bottom: 1px solid var(--color-border);
+  display: block;
+  margin: 20px 0;
+}
+
+.fluid-divider[not-visible] {
+  border-bottom: 1px solid transparent;
+}
+
+.fluid-divider[size="sm"] {
+  margin: 5px 0;
+}
+
+.fluid-divider[size="md"] {
+  margin: 32px 0;
+}
+
+.fluid-divider[size="lg"] {
+  margin: 62px 0;
+}

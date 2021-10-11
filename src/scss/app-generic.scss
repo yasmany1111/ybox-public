@@ -1,0 +1,21 @@
+body .fluid-wrapper {
+  --color-primary: rgb(209, 209, 35);
+  --color-text-contrast: rgb(37, 0, 0);
+}
+
+.app-button {
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  background-color: black;
+  transition: all 0.4s;
+  padding: 10px 15px;
+
+  &:hover {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+.text-primary {
+  color: var(--color-primary);
+}

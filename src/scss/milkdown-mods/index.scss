@@ -1,0 +1,48 @@
+// Modify milkdown
+.milkdown {
+  max-width: 90rem !important;
+  padding: 1.125rem 3.25rem !important;
+
+  .milkdown .editor p.paragraph {
+    margin: 1rem 0;
+  }
+}
+
+$color-red: rgb(255, 115, 105);
+$color-green: rgb(77, 171, 154);
+$color-blue: rgb(82, 156, 202);
+
+.milkdown {
+  h1 {
+    font-size: 36px;
+    color: $color-blue;
+  }
+
+  h2 {
+    font-size: 30px;
+    color: $color-green;
+  }
+
+  h3 {
+    font-size: 26px;
+    color: $color-red;
+  }
+
+  // Anchors
+
+  a.link {
+    text-decoration: underline;
+  }
+
+  // List
+  ul.bullet-list {
+    list-style-type: disc;
+
+    li::marker {
+    }
+  }
+
+  ol.ordered-list {
+    list-style: auto;
+  }
+}

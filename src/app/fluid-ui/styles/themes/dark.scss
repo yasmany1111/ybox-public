@@ -1,0 +1,100 @@
+// Colors overwrite
+body[theme='dark'] {
+  // Theme
+  --color-primary: #6600eb;
+  --color-primary-heavy: #4701a3;
+  --color-secondary: #ac37ab;
+  --color-secondary-heavy: #700f6f;
+
+  // Text
+  --color-text: #dbdbdb;
+  --color-button: #e4e4e4;
+  --color-error: #e31818;
+
+  // Inputs
+  --color-switch-off: #fff;
+  --color-switch-on: #365db5;
+
+  // Background
+  --color-background: #191919;
+  --color-background-heavy: #303030;
+  --color-background-light: rgb(36, 36, 36);
+  --color-overlay: rgb(0, 0, 0);
+
+  // Containers
+  --color-container-background: black;
+  --color-container-background-error: #671f1f;
+  --color-container-background-warning: #fc9724;
+
+  // Border
+  --color-border: transparent;
+
+  // Buttons
+  --color-button-text: #e4e4e4;
+}
+
+body[theme='dark'] {
+  $color-primary-light: #c394ff;
+
+  h1.fluid-h,
+  h2.fluid-h,
+  h3.fluid-h,
+  h4.fluid-h,
+  h5.fluid-h {
+    color: #c394ff;
+  }
+
+  .fluid-wrapper__navigation {
+    background-color: var(--color-background-light);
+    border-right: 1px solid var(--color-primary);
+  }
+
+  .table {
+    box-shadow: 0 1px 3px rgb(103 32 235 / 52%);
+  }
+
+  .fluid-divider {
+    border-bottom: 1px solid $color-primary-light;
+  }
+
+  // Checkbox
+  .fluid-checkbox {
+    color: $color-primary-light;
+  }
+
+  .fluid-checkbox input.fluid-input + div svg {
+    stroke: $color-primary-light;
+  }
+
+  .fluid-checkbox input.fluid-input + div:before,
+  .fluid-checkbox input.fluid-input + div:after {
+    background: $color-primary-light;
+  }
+
+  color: $color-primary-light;
+  .expansion-panel .title {
+    color: $color-primary-light;
+  }
+
+  .expansion-panel .toggle-icon {
+    color: $color-primary-light;
+    border: 1px solid $color-primary-light;
+  }
+
+  // Forms
+
+  .fluid-wrapper input.fluid-input,
+  .fluid-wrapper textarea.fluid-textarea,
+  .fluid-wrapper select.fluid-select {
+    border: 1px solid $color-primary-light;
+  }
+
+  .fluid-wrapper label.fluid-label,
+  .text-button {
+    color: $color-primary-light;
+  }
+
+  .box-container > .login-box {
+    box-shadow: 0 2px 3px rgb(103 32 235 / 52%);
+  }
+}

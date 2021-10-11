@@ -1,0 +1,30 @@
+.w-auto {
+  width: auto;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.close-icon {
+  padding: 1px 15px;
+  font-size: 30px;
+}
+
+aside.fluid-wrapper__navigation {
+  border-right: 1px solid var(--color-primary);
+}
+
+.fluid-wrapper__content .fluid-view-content .fluid-view-box {
+  padding: 10px 20px;
+}
+
+.fluid-wrapper__navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-navigation-open__icon-line {
+  color: var(--color-primary);
+  background-color: var(--color-primary);
+}

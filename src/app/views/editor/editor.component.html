@@ -1,0 +1,15 @@
+<div>
+  <div class="flex flex-row p-4">
+    <i
+      (click)="uploadFile()"
+      class="text-lg text-white cursor-pointer fas fa-upload hover:text-red-300"
+    ></i>
+  </div>
+  <i
+    [ngClass]="{
+      'opacity-0': !isSavingCurrentPage
+    }"
+    class="absolute z-10 text-lg text-blue-400 bottom-1 left-1 fas fa-sync-alt animate-spin"
+  ></i>
+  <app-milkdown-editor (change)="contentChanged($event)" #milkdownEditor></app-milkdown-editor>
+</div>

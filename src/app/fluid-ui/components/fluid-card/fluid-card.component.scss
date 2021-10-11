@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  margin: 0 6px;
+}
+
+.fluid-card {
+  background-color: var(--color-container-background);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+  padding: 15px;
+
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.8;
+    padding-bottom: 5px;
+  }
+
+  &__text {
+  }
+}
+
+:host[type="error"] .fluid-card {
+  background-color: var(--color-container-background-error);
+  color: var(--color-text-in-error);
+}
+
+:host[type="warning"] .fluid-card {
+  background-color: var(--color-container-background-warning);
+  color: var(--color-text-in-warning);
+}

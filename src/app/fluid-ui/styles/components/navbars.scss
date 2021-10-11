@@ -1,0 +1,58 @@
+// Rounded
+
+.fluid-wrapper__navigation.rounded {
+  background-color: var(--color-background-heavy);
+  border-radius: 20px;
+  // padding: 20px;
+  margin: 20px;
+  transition: opacity 1s, width 0.2s ease-in-out, min-width 0.2s ease-in-out, padding 0.2s,
+    margin 0.2s;
+  opacity: 1;
+
+  @media only screen and (max-width: 959px) {
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+  }
+}
+
+.fluid-wrapper.nav-status-interacted .fluid-wrapper__navigation.rounded {
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+
+  @media only screen and (max-width: 959px) {
+    // padding: 20px;
+    border-radius: 0;
+    // margin: 20px;
+    opacity: 1;
+  }
+}
+
+
+// Nav items
+
+.side-navigation__content a.fluid-a {
+  color: var(--color-text);
+  font-size: 18px;
+  padding: 10px 15px;
+  width: 100%;
+  transition: background-color 0.5s, opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  i {
+    margin-right: 10px;
+    width: 30px;
+    font-size: 23px;
+  }
+
+  &:hover:not(.active) {
+    opacity: 0.5;
+  }
+
+  &.active {
+    background-color: var(--color-background);
+  }
+}

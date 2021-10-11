@@ -1,0 +1,104 @@
+<div class="fluid-wrapper fixed-header">
+  <!-- Overlay -->
+  <div
+    class="fluid-wrapper__overlay"
+    onclick="document.querySelector('.fluid-wrapper').classList.toggle('nav-status-interacted');"
+  ></div>
+
+  <!-- Navigation -->
+  <aside class="fluid-wrapper__navigation">
+    <div class="fluid-wrapper__nav-close-area">
+      <button
+        class="mt-1 mr-2 app-button close-icon"
+        onclick="document.querySelector('.fluid-wrapper').classList.toggle('nav-status-interacted');"
+      >
+        X
+      </button>
+    </div>
+
+    <div class="side-navigation__content">
+      <!-- Sidebar content -->
+      <div class="flex flex-col">
+        <div class="flex flex-row items-center justify-center">
+          <ng-container *ngIf="isAuthenticated | async; else loggedOutBlock">
+            <button
+              class="mb-2 app-button"
+              (click)="authService.logout({ returnTo: document.location.origin })"
+            >
+              Log out
+            </button>
+          </ng-container>
+          <ng-template #loggedOutBlock>
+            <button class="fluid-button" (click)="authService.loginWithRedirect()">Log in</button>
+          </ng-template>
+        </div>
+        <!-- <a
+          class="fluid-a"
+          [routerLink]="['/views', 'settings']"
+          routerLinkActive="active"
+          *ngIf="isAuthenticated | async"
+        >
+          <i class="fas fa-cog"></i>
+          Change log
+        </a>
+        <a
+          class="fluid-a"
+          [routerLink]="['/views', 'settings']"
+          routerLinkActive="active"
+          *ngIf="isAuthenticated | async"
+        >
+          <i class="fas fa-cog"></i>
+          Settings
+        </a> -->
+        <a
+          class="fluid-a"
+          [routerLink]="['/views', 'editor']"
+          routerLinkActive="active"
+          *ngIf="isAuthenticated | async"
+        >
+          <i class="fas fa-pen"></i>
+          Editor
+        </a>
+
+        <div *ngIf="isAuthenticated | async">
+          <app-page-selector
+            (pageRemoved)="removePage($event)"
+            (manualFileUpload)="manualFileUpload($event)"
+          ></app-page-selector>
+
+          <button class="m-2 app-button" (click)="createNewPage()">New page</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-end flex-grow">
+      <span class="mb-2 text-xl text-primary">{{ version }}</span>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main class="fluid-wrapper__content">
+    <header class="relative shadow-md fluid-wrapper__header">
+      <button
+        class="ml-2 mr-1 side-navigation-open app-button"
+        onclick="document.querySelector('.fluid-wrapper').classList.toggle('nav-status-interacted');"
+      >
+        <div class="side-navigation-open__icon-line"></div>
+        <div class="side-navigation-open__icon-line"></div>
+        <div class="side-navigation-open__icon-line"></div>
+      </button>
+
+      <img class="ml-1 h-14" src="/assets/icon/only-logo.png" />
+      <div class="text-2xl font-bold header-content">YKnowBox</div>
+    </header>
+
+    <section class="fluid-view-content">
+      <div class="fluid-view-box">
+        <!-- Main Content -->
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </main>
+</div>
+
+<app-fluid-loader *ngIf="isAuthChecked === null"></app-fluid-loader>

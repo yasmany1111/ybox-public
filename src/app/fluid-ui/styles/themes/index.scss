@@ -1,0 +1,43 @@
+body {
+  // Theme
+  --color-primary: #6600eb;
+  --color-primary-heavy: #4701a3;
+  --color-secondary: #147d78;
+  --color-secondary-heavy: #0b5e59;
+
+  // Background
+  --color-background: #f1f1f1;
+  --color-background-heavy: #b1b1b1;
+  --color-background-light: #eeeeee;
+  --color-overlay: rgb(0, 0, 0);
+
+  // Text
+  --color-text: #333333;
+  --color-text-secondary: #222222;
+  --color-text-contrast: #cecece;
+
+  // Misc
+  --color-error: #e31818;
+  --color-success: rgb(95, 247, 128) 8;
+
+  ::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    opacity: 0.5s;
+  }
+}
+
+@import './dark-green.scss';
+@import './dark.scss';

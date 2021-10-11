@@ -1,0 +1,46 @@
+<div class="fluid-wrapper fixed-header">
+  <!-- Overlay -->
+  <div
+    class="fluid-wrapper__overlay"
+    onclick="document.querySelector('.fluid-wrapper').classList.toggle('nav-status-interacted');"
+  ></div>
+
+  <!-- Navigation -->
+  <aside class="fluid-wrapper__navigation">
+    <div class="close-area">
+      <button
+        class="side-navigation-close"
+        onclick="document.querySelector('.fluid-wrapper').classList.toggle('nav-status-interacted');"
+      >
+        X
+      </button>
+    </div>
+
+    <div class="side-navigation__content">
+      <!-- Sidebar content -->
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main class="fluid-wrapper__content">
+    <header class="fluid-wrapper__header">
+      <button
+        class="side-navigation-open"
+        onclick="document.querySelector('.fluid-wrapper').classList.toggle('nav-status-interacted');"
+      >
+        <div class="side-navigation-open__icon-line"></div>
+        <div class="side-navigation-open__icon-line"></div>
+        <div class="side-navigation-open__icon-line"></div>
+      </button>
+
+      <div class="header-content">Title</div>
+    </header>
+
+    <section class="fluid-view-content">
+      <div class="fluid-view-box">
+        <!-- Main Content -->
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </main>
+</div>

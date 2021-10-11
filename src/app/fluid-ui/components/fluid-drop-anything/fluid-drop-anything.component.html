@@ -1,0 +1,12 @@
+<div
+  [ngClass]="{ 'drop-area--something-over': isHoveringSomething }"
+  class="drop-area"
+>
+  <div class="loaded-item" *ngFor="let item of loadedItems">
+    <span>{{ item.name }}</span>
+    <button (click)="downloadFile(item)">Download</button>
+    <span (click)="removeFile(item)">X</span>
+  </div>
+
+  <span class="drop-here-tex">Drop Here</span>
+</div>

@@ -1,0 +1,160 @@
+<div
+  [ngClass]="{ 'box-container--visible': isBackgroundVisible }"
+  (click)="clickedOverlay($event)"
+  class="box-container"
+>
+  <div *ngIf="isInLoginMode; else registerFormBlock" class="login-box flex flex-col">
+    <div class="exit-row">
+      <button *ngIf="canBeClosed" (click)="closeEmit()">X</button>
+    </div>
+
+    <form
+      class="form-container"
+      [formGroup]="loginForm"
+      (ngSubmit)="submitLoginForm()"
+    >
+      <div class="form-component">
+        <label class="fluid-label">Email</label>
+        <input
+          formControlName="email"
+          name="email"
+          autocomplete="email"
+          type="email"
+          class="fluid-input"
+        />
+        <span
+          *ngIf="emailControl.dirty && emailControl.invalid"
+          class="form-component__error"
+          >Email is invalid</span
+        >
+      </div>
+
+      <div class="form-component">
+        <label class="fluid-label">Password</label>
+        <input
+          formControlName="password"
+          name="currentPassword"
+          autocomplete="current-password"
+          type="password"
+          class="fluid-input"
+        />
+      </div>
+
+      <div
+        *ngFor="let error of errors"
+        class="form-component__error generic-error"
+      >
+        {{ error }}
+      </div>
+
+      <div class="action-buttons flex flex-col">
+        <div>
+          <button
+            [disabled]="loginForm.invalid || isInProcessingState"
+            type="submit"
+            class="button"
+          >
+            Login
+          </button>
+          <button
+            *ngIf="isAbleToRegister"
+            (click)="isInLoginMode = false"
+            type="button"
+            class="text-button"
+          >
+            Register instead
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Register-->
+
+  <ng-template #registerFormBlock>
+    <div class="login-box flex flex-col">
+      <div class="exit-row">
+        <button *ngIf="canBeClosed" (click)="closeEmit()">X</button>
+      </div>
+
+      <form
+        class="form-container"
+        [formGroup]="registerForm"
+        (ngSubmit)="submitRegisterForm()"
+      >
+        <div class="form-component">
+          <label class="fluid-label">Email</label>
+          <input
+            formControlName="email"
+            name="email"
+            autocomplete="email"
+            type="email"
+            class="fluid-input"
+          />
+          <span
+            *ngIf="emailRegisterControl.dirty && emailRegisterControl.invalid"
+            class="form-component__error"
+            >Email is invalid</span
+          >
+        </div>
+
+        <div class="form-component">
+          <label class="fluid-label">Password</label>
+          <input
+            formControlName="password"
+            name="currentPassword"
+            autocomplete="current-password"
+            type="password"
+            class="fluid-input"
+          />
+        </div>
+
+        <div class="form-component">
+          <label class="fluid-label">Confirm password</label>
+          <input
+            formControlName="confirmPassword"
+            name="confirmPassword"
+            autocomplete="confirm-password"
+            type="password"
+            class="fluid-input"
+          />
+          <span
+            *ngIf="
+              confirmPasswordRegisterControl.touched && arePasswordsDifferent
+            "
+            class="form-component__error"
+            >Passwords don't match</span
+          >
+        </div>
+
+        <div *ngIf="registerError" class="form-component__error generic-error">
+          {{ registerError }}
+        </div>
+
+        <div class="action-buttons flex flex-col">
+          <div>
+            <button
+              [disabled]="
+                registerForm.invalid ||
+                isInProcessingState ||
+                arePasswordsDifferent
+              "
+              type="submit"
+              class="button"
+            >
+              Register
+            </button>
+            <button
+              (click)="isInLoginMode = true"
+              *ngIf="isAbleToRegister"
+              type="button"
+              class="text-button"
+            >
+              Login instead
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+  // Good practice to add box-sizing: border-box in body and inherit here
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+input,
+label,
+button,
+a,
+p,
+i {
+  margin: 0;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a,
+a > * {
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+strong {
+  padding: 0;
+}
+
+input[type="radio"] + label {
+  vertical-align: text-bottom;
+}

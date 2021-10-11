@@ -1,0 +1,72 @@
+.form-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 0 0 0;
+  place-content: flex-start;
+
+  &__error {
+    margin: 10px 0px 0 7px;
+    color: var(--color-error);
+  }
+}
+
+.fluid-wrapper label.fluid-label {
+  font-size: 23px;
+  margin-bottom: 5px;
+  color: var(--color-primary);
+}
+
+.fluid-wrapper textarea.fluid-textarea {
+  background-color: var(--color-background);
+  padding: 5px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  max-width: 700px;
+  min-height: 150px;
+  border: transparent;
+  max-height: 200px;
+  min-width: 400px;
+  margin: 10px;
+  color: var(--color-text);
+}
+
+.fluid-wrapper select.fluid-select {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  max-width: 300px;
+  border: transparent;
+  margin: 0px;
+  margin: 10px;
+  color: var(--color-text);
+}
+
+.fluid-wrapper input.fluid-button {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  color: var(--color-text);
+  font-size: 17px;
+  margin: inherit;
+  padding: 5px;
+  transition: all 0.4s;
+  width: inherit;
+  width: 250px;
+
+  &:hover {
+    border: 1px solid var(--color-border);
+  }
+
+  &:focus {
+    border: 1px solid var(--color-border);
+  }
+}
+
+// Validation styling
+
+.fluid-wrapper input.fluid-button {
+  &.ng-invalid.ng-dirty {
+    border: 1px solid var(--color-error);
+  }
+}

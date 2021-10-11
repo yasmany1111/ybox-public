@@ -1,0 +1,7 @@
+<div
+  (click)="clickedOverlay($event)"
+  class="fluid-full-overlay"
+  [ngClass]="{ 'full-overlay--is-opened': isRendered }"
+>
+  <ng-content></ng-content>
+</div>

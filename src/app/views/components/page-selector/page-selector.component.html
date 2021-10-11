@@ -1,0 +1,62 @@
+<div *ngFor="let page of pages" class="flex flex-col">
+  <div
+    class="flex flex-row items-center justify-center px-2 py-4 cursor-default page-selector-item"
+    routerLinkActive="active"
+  >
+    <i
+      *ngIf="page.children?.length"
+      class="w-auto mr-2 text-lg cursor-pointer fas fa-folder hover:text-red-400"
+    ></i>
+
+    <span
+      [routerLink]="['/views', 'editor', page.id]"
+      [ngClass]="getIconClass(page)"
+      class="overflow-hidden transition-opacity cursor-pointer hover:opacity-60 overflow-ellipsis whitespace-nowrap"
+      >{{ page.name }}</span
+    >
+
+    <div class="flex flex-row items-end justify-end flex-grow mr-4">
+      <i
+        (click)="editPageName(page.id)"
+        class="w-auto ml-2 text-lg cursor-pointer fas fa-edit hover:text-red-400"
+      ></i>
+      <i
+        (click)="downloadPage(page.id)"
+        class="w-auto ml-2 text-lg cursor-pointer fas fa-download hover:text-red-400"
+      ></i>
+      <i
+        (click)="removePageById(page.id)"
+        class="w-auto ml-2 text-lg cursor-pointer fas fa-trash hover:text-red-400"
+      ></i>
+    </div>
+  </div>
+
+  <div *ngFor="let page of page.children">
+    <div
+      class="flex flex-row items-center justify-center px-2 py-4 ml-5 cursor-default page-selector-item"
+      routerLinkActive="active"
+    >
+      <span
+        [routerLink]="['/views', 'editor', page.id]"
+        [ngClass]="getIconClass(page)"
+        class="overflow-hidden transition-opacity cursor-pointer hover:opacity-60 overflow-ellipsis whitespace-nowrap"
+        >{{ page.name }}</span
+      >
+
+      <div class="flex flex-row items-end justify-end flex-grow mr-4">
+        <i
+          (click)="editPageName(page.id)"
+          class="w-auto ml-2 text-lg cursor-pointer fas fa-edit hover:text-red-400"
+        ></i>
+        <i
+          (click)="downloadPage(page.id)"
+          class="w-auto ml-2 text-lg cursor-pointer fas fa-download hover:text-red-400"
+        ></i>
+        <i
+          (click)="removePageById(page.id)"
+          class="w-auto ml-2 text-lg cursor-pointer fas fa-trash hover:text-red-400"
+        ></i>
+      </div>
+    </div>
+  </div>
+</div>

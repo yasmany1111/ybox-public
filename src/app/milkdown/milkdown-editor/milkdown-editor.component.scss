@@ -1,0 +1,31 @@
+@import 'https://unpkg.com/prism-themes@1.8.0/themes/prism-nord.css';
+
+body[theme="dark"] :host {
+  height: 100%;
+  width: 100%;
+
+  --font: Roboto, HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande,
+      sans-serif;
+  --font-code: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+  --shadow: 59, 66, 82;
+  --primary: 94, 129, 172;
+  --secondary: 129, 161, 193;
+  --radius: 4px;
+  --line-width: 1px;
+  --neutral: 46, 52, 64;
+  --solid: 76, 86, 106;
+  --line: 216, 222, 233;
+  --background: 236, 239, 244;
+  --surface: 255, 255, 255;
+  --neutral: 236, 239, 244;
+  --solid: 216, 222, 233;
+  --line: 67, 76, 94;
+  --background: 37, 41, 50;
+  --surface: 46, 52, 64;
+}
+
+
+.editor-container {
+  height: 100%;
+  width: 100%;
+}
