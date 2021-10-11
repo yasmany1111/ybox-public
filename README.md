@@ -1,27 +1,27 @@
-# KnowledgeBox
+#  YBox
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+## A lightweight Markdown editor
 
-## Development server
+The idea behind this project was to provide a fast way of reading, editing and saving markdown notes, docs and information.
+It uses a 3 layer save system, that stores the documents progressively to reduce both api usage and increase doc retrieval speed.
+#### Layers:
+* In memory
+* LocalStorage
+* API - Workers KV Storage
+The doc autosaves in layers when being edited.
+This also was a workaround to KV Storage not reflecting changes immediately sometimes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Stack
+Cloudflare Pages
+Cloudflare Workers
+Cloudflare KV Storage
 
-## Code scaffolding
+# Instructions
+Run using
+```bash
+npm i
+npm run start
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Created for the Cloudflare Summer Challenge and fun!
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
