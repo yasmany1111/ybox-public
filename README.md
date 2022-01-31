@@ -1,6 +1,9 @@
 #  YBox
 
 ## A lightweight Markdown editor
+## Preview:
+
+[YBox](https://luz-editor.pages.dev/)
 
 The idea behind this project was to provide a fast way of reading, editing and saving markdown notes, docs and information.
 It uses a 3 layer save system, that stores the documents progressively to reduce both api usage and increase doc retrieval speed.
@@ -24,4 +27,3 @@ npm run start
 ```
 
 ### Created for the Cloudflare Summer Challenge and fun!
-
